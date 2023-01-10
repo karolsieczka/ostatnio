@@ -1,0 +1,14 @@
+<div id="<%= dom_id item %>">
+  <p>
+    <strong>Name:</strong>
+    <%= item.name %>
+  </p>
+  <p>
+  <strong>Done at:</strong>
+  <%= item.done_at %>
+</p>
+
+<%= link_to("mark as done", mark_as_done_item_path(item))%>
+
+
+</div>
