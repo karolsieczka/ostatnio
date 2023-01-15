@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update mark_as_done destroy ]
 
@@ -49,7 +51,7 @@ class ItemsController < ApplicationController
 
 
   def mark_as_done
-   # binding.pry 
+    @item = Item.find(params[:id])
     @item.update(done_at: Time.zone.now)
 
     respond_to do |format|
